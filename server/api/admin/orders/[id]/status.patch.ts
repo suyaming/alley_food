@@ -7,7 +7,7 @@ import {
 import { requireAdmin } from '../../../../utils/auth'
 import { getOrder, updateOrder } from '../../../../utils/orders'
 import { canTransition } from '../../../../utils/order-fsm'
-import type { OrderStatus } from '../../../../../shared/types'
+import type { OrderStatus } from '~~/shared/types'
 
 interface StatusBody {
   status?: OrderStatus

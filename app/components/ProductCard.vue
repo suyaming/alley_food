@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Plus, Check } from 'lucide-vue-next'
-import type { Product } from '../../shared/types'
+import type { Product } from '~~/shared/types'
 
 const props = defineProps<{
   product: Product

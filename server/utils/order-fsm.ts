@@ -1,4 +1,4 @@
-import type { OrderStatus } from '../../shared/types'
+import type { OrderStatus } from '~~/shared/types'
 
 /**
  * Order status state machine. Keys are the current status, values are the

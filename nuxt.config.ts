@@ -1,7 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'node:url'
+
+const sharedDir = fileURLToPath(new URL('./shared', import.meta.url))
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+
+  // Explicit alias for `shared/` so it resolves identically in Vite (app +
+  // SSR) and Rollup (Nitro). Without this, Nuxt 4.4 + Vite 7 occasionally
+  // emits unresolved relative imports like `./shared/products.ts` in the
+  // SSR bundle that Nitro's Rollup can't follow.
+  alias: {
+    '~~/shared': sharedDir,
+  },
+  nitro: {
+    alias: {
+      '~~/shared': sharedDir,
+    },
+  },
 
   modules: [
     '@nuxtjs/tailwindcss',

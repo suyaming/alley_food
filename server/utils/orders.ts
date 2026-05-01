@@ -1,5 +1,5 @@
 import { eq } from 'drizzle-orm'
-import type { OrderRecord } from '../../shared/types'
+import type { OrderRecord } from '~~/shared/types'
 import { getDb } from '../db/client'
 import { orders } from '../db/schema'
 

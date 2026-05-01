@@ -1,7 +1,7 @@
 import { defineEventHandler, getQuery } from 'h3'
 import { requireAdmin } from '../../../utils/auth'
 import { listOrders } from '../../../utils/orders'
-import type { OrderStatus } from '../../../../shared/types'
+import type { OrderStatus } from '~~/shared/types'
 
 const VALID_STATUSES: OrderStatus[] = [
   'PENDING',

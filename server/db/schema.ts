@@ -1,5 +1,5 @@
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core'
-import type { OrderStatus, OrderRecord } from '../../shared/types'
+import type { OrderStatus, OrderRecord } from '~~/shared/types'
 
 export const orders = sqliteTable('orders', {
   id: text('id').primaryKey(),

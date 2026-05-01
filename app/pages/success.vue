@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { ArrowRight, AlertTriangle } from 'lucide-vue-next'
-import type { OrderRecord } from '../../shared/types'
+import type { OrderRecord } from '~~/shared/types'
 
 const route = useRoute()
 const orderId = computed(() => {

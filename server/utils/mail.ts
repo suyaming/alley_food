@@ -1,5 +1,5 @@
 import { useRuntimeConfig } from '#imports'
-import type { OrderRecord } from '../../shared/types'
+import type { OrderRecord } from '~~/shared/types'
 
 // ─── Resend client ────────────────────────────────────────────────────
 // https://resend.com/docs/api-reference/emails/send-email

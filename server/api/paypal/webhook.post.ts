@@ -16,7 +16,7 @@ import {
   sendKitchenOrderAlert,
   sendRefundConfirmation,
 } from '../../utils/mail'
-import type { OrderRecord, OrderStatus } from '../../../shared/types'
+import type { OrderRecord, OrderStatus } from '~~/shared/types'
 
 interface PaypalWebhookEvent {
   id: string

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { Lock, AlertTriangle } from 'lucide-vue-next'
-import type { CartItem } from '../../shared/types'
+import type { CartItem } from '~~/shared/types'
 
 const props = defineProps<{
   items: CartItem[]

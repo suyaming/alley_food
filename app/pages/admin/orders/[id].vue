@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { ArrowLeft, AlertTriangle } from 'lucide-vue-next'
-import type { OrderRecord, OrderStatus } from '../../../../shared/types'
+import type { OrderRecord, OrderStatus } from '~~/shared/types'
 
 definePageMeta({ middleware: 'admin', layout: false })
 

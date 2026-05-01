@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { products, getProduct } from '../shared/products'
+import { products, getProduct } from '~~/shared/products'
 
 describe('shared/products', () => {
   it('has at least 80 dishes', () => {

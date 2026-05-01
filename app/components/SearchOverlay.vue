@@ -2,8 +2,8 @@
 import { computed, nextTick, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import Fuse from 'fuse.js'
 import { Search, X, ArrowRight, Command } from 'lucide-vue-next'
-import { products } from '../../shared/products'
-import type { Product } from '../../shared/types'
+import { products } from '~~/shared/products'
+import type { Product } from '~~/shared/types'
 
 const { isOpen, close, toggle } = useSearchOverlay()
 const router = useRouter()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { ArrowDown, ArrowRight } from 'lucide-vue-next'
-import { products, categories } from '../../shared/products'
+import { products, categories } from '~~/shared/products'
 
 useHead({ title: '巷口 Alley · 街头小吃' })
 

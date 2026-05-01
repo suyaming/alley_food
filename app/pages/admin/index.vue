@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { LogOut, RefreshCw, Filter } from 'lucide-vue-next'
-import type { OrderRecord, OrderStatus } from '../../../shared/types'
+import type { OrderRecord, OrderStatus } from '~~/shared/types'
 
 definePageMeta({ middleware: 'admin', layout: false })
 useHead({ title: 'Kitchen · 巷口 Alley' })

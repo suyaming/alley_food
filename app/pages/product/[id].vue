@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { ArrowLeft, Plus, Minus, Check, ShieldCheck, Truck } from 'lucide-vue-next'
-import { getProduct, products } from '../../../shared/products'
+import { getProduct, products } from '~~/shared/products'
 
 const route = useRoute()
 const router = useRouter()

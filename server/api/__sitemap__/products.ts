@@ -1,5 +1,5 @@
 import { defineSitemapEventHandler } from '#imports'
-import { products } from '../../../shared/products'
+import { products } from '~~/shared/products'
 
 /**
  * Dynamic sitemap source: emits a URL entry for every product.

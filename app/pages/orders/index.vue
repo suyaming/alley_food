@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import { Search, AlertTriangle, ArrowRight, Loader2 } from 'lucide-vue-next'
-import type { OrderRecord } from '../../../shared/types'
+import type { OrderRecord } from '~~/shared/types'
 
 useHead({ title: '订单查询 Orders · 巷口 Alley' })
 

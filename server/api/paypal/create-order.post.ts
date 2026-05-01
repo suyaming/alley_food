@@ -1,8 +1,8 @@
 import { defineEventHandler, readBody, createError } from 'h3'
 import { paypalFetch, formatMoney } from '../../utils/paypal'
 import { saveOrder } from '../../utils/orders'
-import { getProduct } from '../../../shared/products'
-import type { CartItem, OrderRecord } from '../../../shared/types'
+import { getProduct } from '~~/shared/products'
+import type { CartItem, OrderRecord } from '~~/shared/types'
 
 interface CreateOrderBody {
   items?: CartItem[]

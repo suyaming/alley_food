@@ -1,7 +1,7 @@
 import { computed, watch } from 'vue'
 import { useState } from '#imports'
-import type { CartItem, CartLine } from '../../shared/types'
-import { getProduct } from '../../shared/products'
+import type { CartItem, CartLine } from '~~/shared/types'
+import { getProduct } from '~~/shared/products'
 
 const STORAGE_KEY = 'paypal_shop_cart_v1'
 
