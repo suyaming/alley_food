@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>巷口 Alley · Logo Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0F0F0F',
+              paper: '#FAF9F6',
+              line: '#E8E5DE',
+              muted: '#6B6B6B',
+              vermilion: '#D13B27',
+              lemon: '#FFE45E',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+              display: ['Fraunces', 'serif'],
+              cn: ['"Noto Serif SC"', 'serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html { background: #FAF9F6; color: #0F0F0F; }
+      .eyebrow { font-family: Inter, sans-serif; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; font-size: 11px; color: #6B6B6B; }
+      .recommended { position: absolute; top: 12px; right: 12px; background: #FFE45E; color: #0F0F0F; font-family: Inter, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; padding: 4px 8px; }
+      .swatch { aspect-ratio: 1/1; }
+      svg .demo-arch line, svg .demo-arch path { vector-effect: non-scaling-stroke; }
+    </style>
+  </head>
+  <body class="font-sans antialiased">
+    <main class="max-w-6xl mx-auto px-6 py-16">
+      <!-- HEADER -->
+      <header class="border-b border-line pb-10 mb-16">
+        <p class="eyebrow">Logo Showcase · 巷口 Alley</p>
+        <h1 class="font-display text-5xl md:text-6xl mt-4 leading-tight">
+          A small lane <span class="italic">on a quiet street</span>
+        </h1>
+        <p class="mt-4 max-w-2xl text-muted leading-relaxed">
+          Six logo directions for <span class="text-ink">巷口 Alley</span>, a Chinese
+          street-food collective. Each variant follows the same brief: extreme
+          simplicity, generous negative space, single focal point, and one
+          shared accent — vermilion red <span class="font-mono">#D13B27</span>.
+        </p>
+      </header>
+
+      <!-- DESIGN SYSTEM -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div>
+          <p class="eyebrow">Color</p>
+          <div class="grid grid-cols-4 gap-2 mt-3">
+            <div>
+              <div class="swatch bg-[#FAF9F6] border border-line"></div>
+              <p class="text-[10px] mt-1 font-mono text-muted">Paper #FAF9F6</p>
+            </div>
+            <div>
+              <div class="swatch bg-[#0F0F0F]"></div>
+              <p class="text-[10px] mt-1 font-mono text-muted">Ink #0F0F0F</p>
+            </div>
+            <div>
+              <div class="swatch bg-[#D13B27]"></div>
+              <p class="text-[10px] mt-1 font-mono text-muted">Vermilion #D13B27</p>
+            </div>
+            <div>
+              <div class="swatch bg-[#FFE45E]"></div>
+              <p class="text-[10px] mt-1 font-mono text-muted">Lemon #FFE45E</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow">Typography</p>
+          <div class="mt-3 space-y-1">
+            <p class="font-display text-3xl">Fraunces — display</p>
+            <p class="font-cn text-3xl">巷口 — Noto Serif SC</p>
+            <p class="font-sans text-base">Inter — body / UI</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow">Picked variant</p>
+          <p class="font-display text-3xl mt-3">v2 · 朱印</p>
+          <p class="text-sm text-muted mt-2 leading-relaxed">
+            Vermilion stamp. Strongest recall, scales down to 24px and stays
+            legible. Used as the default site mark.
+          </p>
+        </div>
+      </section>
+
+      <!-- LOGO GRID -->
+      <section>
+        <p class="eyebrow mb-6">Six variants</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line">
+          <!-- v1 -->
+          <article class="bg-paper p-8 relative group">
+            <div class="aspect-square bg-[#F4F2EC] flex items-center justify-center">
+              <svg viewBox="0 0 1024 1024" class="w-3/4 h-3/4">
+                <path d="M 280 880 L 280 432 A 232 232 0 0 1 744 432 L 744 880" fill="none" stroke="#0F0F0F" stroke-width="28" stroke-linecap="square" />
+                <line x1="232" y1="880" x2="792" y2="880" stroke="#0F0F0F" stroke-width="28" stroke-linecap="square" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <p class="eyebrow">v1</p>
+              <h3 class="font-display text-2xl mt-1">门洞 Door Arch</h3>
+              <p class="text-sm text-muted mt-2 leading-relaxed">
+                A literal alley entrance reduced to two strokes. Most abstract,
+                most quiet. Reads well at any size, but the brand name lives
+                only in the wordmark beside it.
+              </p>
+            </div>
+          </article>
+
+          <!-- v2 (recommended) -->
+          <article class="bg-paper p-8 relative group">
+            <span class="recommended">RECOMMENDED</span>
+            <div class="aspect-square bg-[#F4F2EC] flex items-center justify-center">
+              <svg viewBox="0 0 1024 1024" class="w-3/4 h-3/4">
+                <defs>
+                  <clipPath id="stamp-notch-grid">
+                    <path d="M 200 200 H 824 V 760 L 760 824 H 200 Z" />
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#stamp-notch-grid)">
+                  <rect x="200" y="200" width="624" height="624" rx="20" fill="#D13B27" />
+                </g>
+                <text x="380" y="640" text-anchor="middle" class="font-cn" font-size="320" font-weight="700" fill="#FAF9F6">巷</text>
+                <text x="644" y="640" text-anchor="middle" class="font-cn" font-size="320" font-weight="700" fill="#FAF9F6">口</text>
+              </svg>
+            </div>
+            <div class="mt-5">
+              <p class="eyebrow">v2</p>
+              <h3 class="font-display text-2xl mt-1">朱印 Vermilion Stamp</h3>
+              <p class="text-sm text-muted mt-2 leading-relaxed">
+                The Chinese hanko reduced to one block of vermilion + two
+                characters. The corner notch hints at hand-pressing. Strongest
+                identity — works as packaging seal, signboard, and small
+                favicon.
+              </p>
+            </div>
+          </article>
+
+          <!-- v3 -->
+          <article class="bg-paper p-8 relative group">
+            <div class="aspect-square bg-[#F4F2EC] flex items-center justify-center">
+              <svg viewBox="0 0 1024 1024" class="w-3/4 h-3/4">
+                <line x1="384" y1="880" x2="496" y2="500" stroke="#0F0F0F" stroke-width="28" stroke-linecap="round" />
+                <line x1="640" y1="880" x2="528" y2="500" stroke="#0F0F0F" stroke-width="28" stroke-linecap="round" />
+                <circle cx="512" cy="340" r="56" fill="#D13B27" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <p class="eyebrow">v3</p>
+              <h3 class="font-display text-2xl mt-1">夜灯 Alley Lantern</h3>
+              <p class="text-sm text-muted mt-2 leading-relaxed">
+                One-point perspective walls + a single lantern. Tells the
+                story in three primitives. The most romantic mark, but the
+                least legible at small scale.
+              </p>
+            </div>
+          </article>
+
+          <!-- v4 -->
+          <article class="bg-paper p-8 relative group">
+            <div class="aspect-square bg-[#F4F2EC] flex items-center justify-center">
+              <svg viewBox="0 0 1024 1024" class="w-3/4 h-3/4">
+                <text x="440" y="700" text-anchor="middle" class="font-cn" font-size="600" font-weight="700" fill="#0F0F0F">口</text>
+                <circle cx="720" cy="320" r="48" fill="#D13B27" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <p class="eyebrow">v4</p>
+              <h3 class="font-display text-2xl mt-1">单字 One Character</h3>
+              <p class="text-sm text-muted mt-2 leading-relaxed">
+                The kou (mouth) radical, alone. The vermilion dot reads as
+                punctuation, a hanging lantern, or a small flame — let the
+                viewer decide.
+              </p>
+            </div>
+          </article>
+
+          <!-- v5 -->
+          <article class="bg-paper p-8 relative group">
+            <div class="aspect-square bg-[#F4F2EC] flex items-center justify-center">
+              <svg viewBox="0 0 1024 1024" class="w-3/4 h-3/4">
+                <text x="512" y="240" text-anchor="middle" class="font-sans" font-size="40" font-weight="500" letter-spacing="6" fill="#0F0F0F">STREET FOOD COLLECTIVE</text>
+                <text x="512" y="640" text-anchor="middle" class="font-cn" font-size="400" font-weight="700" fill="#0F0F0F">巷口</text>
+                <line x1="380" y1="760" x2="644" y2="760" stroke="#0F0F0F" stroke-width="3" />
+                <text x="512" y="822" text-anchor="middle" class="font-display italic" font-size="48" fill="#0F0F0F">Alley · est. 2026</text>
+              </svg>
+            </div>
+            <div class="mt-5">
+              <p class="eyebrow">v5</p>
+              <h3 class="font-display text-2xl mt-1">杂志排印 Editorial Stack</h3>
+              <p class="text-sm text-muted mt-2 leading-relaxed">
+                A self-contained masthead. Carries the entire brand in one
+                composition — eyebrow, mark, rule, footer. Use on covers and
+                opening spreads, not in the header chrome.
+              </p>
+            </div>
+          </article>
+
+          <!-- v6 -->
+          <article class="bg-paper p-8 relative group">
+            <div class="aspect-square bg-[#F4F2EC] flex items-center justify-center">
+              <svg viewBox="0 0 1024 1024" class="w-3/4 h-3/4">
+                <g fill="#0F0F0F">
+                  <circle cx="242" cy="242" r="22" /><circle cx="332" cy="242" r="22" /><circle cx="422" cy="242" r="22" /><circle cx="512" cy="242" r="22" /><circle cx="602" cy="242" r="22" /><circle cx="692" cy="242" r="22" />
+                  <circle cx="242" cy="332" r="22" /><circle cx="782" cy="332" r="22" />
+                  <circle cx="242" cy="422" r="22" /><circle cx="782" cy="422" r="22" />
+                  <circle cx="242" cy="512" r="22" /><circle cx="782" cy="512" r="22" />
+                  <circle cx="242" cy="602" r="22" /><circle cx="782" cy="602" r="22" />
+                  <circle cx="242" cy="692" r="22" /><circle cx="782" cy="692" r="22" />
+                  <circle cx="242" cy="782" r="22" /><circle cx="332" cy="782" r="22" /><circle cx="422" cy="782" r="22" /><circle cx="512" cy="782" r="22" /><circle cx="602" cy="782" r="22" /><circle cx="692" cy="782" r="22" /><circle cx="782" cy="782" r="22" />
+                </g>
+                <circle cx="782" cy="242" r="22" fill="#D13B27" />
+              </svg>
+            </div>
+            <div class="mt-5">
+              <p class="eyebrow">v6</p>
+              <h3 class="font-display text-2xl mt-1">点阵 Dotted Hutong</h3>
+              <p class="text-sm text-muted mt-2 leading-relaxed">
+                The kou character drawn out as a 7×7 dot ring. Negative space
+                does the work. Reads modern, ages well, and animates nicely
+                if you ever need motion.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BACKGROUND PREVIEWS for v2 -->
+      <section class="mt-20">
+        <p class="eyebrow mb-6">v2 in context</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line border border-line">
+          <!-- on paper -->
+          <div class="bg-[#FAF9F6] aspect-square flex items-center justify-center p-12 relative">
+            <svg viewBox="0 0 1024 1024" class="w-1/2 h-1/2">
+              <defs><clipPath id="ctx1"><path d="M 200 200 H 824 V 760 L 760 824 H 200 Z" /></clipPath></defs>
+              <g clip-path="url(#ctx1)"><rect x="200" y="200" width="624" height="624" rx="20" fill="#D13B27" /></g>
+              <text x="380" y="640" text-anchor="middle" class="font-cn" font-size="320" font-weight="700" fill="#FAF9F6">巷</text>
+              <text x="644" y="640" text-anchor="middle" class="font-cn" font-size="320" font-weight="700" fill="#FAF9F6">口</text>
+            </svg>
+            <p class="absolute bottom-3 left-3 eyebrow">on paper</p>
+          </div>
+          <!-- on ink -->
+          <div class="bg-[#0F0F0F] aspect-square flex items-center justify-center p-12 relative">
+            <svg viewBox="0 0 1024 1024" class="w-1/2 h-1/2">
+              <defs><clipPath id="ctx2"><path d="M 200 200 H 824 V 760 L 760 824 H 200 Z" /></clipPath></defs>
+              <g clip-path="url(#ctx2)"><rect x="200" y="200" width="624" height="624" rx="20" fill="#D13B27" /></g>
+              <text x="380" y="640" text-anchor="middle" class="font-cn" font-size="320" font-weight="700" fill="#FAF9F6">巷</text>
+              <text x="644" y="640" text-anchor="middle" class="font-cn" font-size="320" font-weight="700" fill="#FAF9F6">口</text>
+            </svg>
+            <p class="absolute bottom-3 left-3 eyebrow text-paper">on ink (dark mode)</p>
+          </div>
+          <!-- small chip -->
+          <div class="bg-[#FAF9F6] aspect-square flex flex-col items-center justify-center p-12 relative gap-6">
+            <div class="flex items-center gap-3">
+              <svg viewBox="0 0 1024 1024" class="w-8 h-8">
+                <defs><clipPath id="ctx3"><path d="M 200 200 H 824 V 760 L 760 824 H 200 Z" /></clipPath></defs>
+                <g clip-path="url(#ctx3)"><rect x="200" y="200" width="624" height="624" rx="20" fill="#D13B27" /></g>
+              </svg>
+              <span class="font-cn font-bold">巷口</span>
+              <span class="font-display italic">Alley</span>
+            </div>
+            <div class="flex items-center gap-3 opacity-50">
+              <svg viewBox="0 0 1024 1024" class="w-4 h-4">
+                <defs><clipPath id="ctx4"><path d="M 200 200 H 824 V 760 L 760 824 H 200 Z" /></clipPath></defs>
+                <g clip-path="url(#ctx4)"><rect x="200" y="200" width="624" height="624" rx="20" fill="#D13B27" /></g>
+              </svg>
+              <span class="font-cn font-bold text-xs">巷口</span>
+            </div>
+            <p class="absolute bottom-3 left-3 eyebrow">scale test</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIFESTYLE MOCKUPS -->
+      <section class="mt-20">
+        <p class="eyebrow mb-2">Phase 4 — Lifestyle mockups</p>
+        <h2 class="font-display text-3xl mb-6">
+          The mark <span class="italic">in the wild</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <figure class="border border-line">
+            <img
+              src="/mockups/01-stamp-on-paper.png"
+              alt="Vermilion stamp on rice paper"
+              class="w-full aspect-square object-cover"
+            />
+            <figcaption class="p-4 flex justify-between items-baseline">
+              <span class="font-display text-lg">01 · 朱印·宣纸</span>
+              <span class="eyebrow">stamp on paper</span>
+            </figcaption>
+          </figure>
+          <figure class="border border-line">
+            <img
+              src="/mockups/02-signboard-night.png"
+              alt="Hanging signboard at night in a hutong alley"
+              class="w-full aspect-square object-cover"
+            />
+            <figcaption class="p-4 flex justify-between items-baseline">
+              <span class="font-display text-lg">02 · 招牌·夜街</span>
+              <span class="eyebrow">signboard at night</span>
+            </figcaption>
+          </figure>
+          <figure class="border border-line">
+            <img
+              src="/mockups/03-takeout-bag.png"
+              alt="Kraft paper takeout bag with brand stamp"
+              class="w-full aspect-square object-cover"
+            />
+            <figcaption class="p-4 flex justify-between items-baseline">
+              <span class="font-display text-lg">03 · 外卖纸袋</span>
+              <span class="eyebrow">takeout bag</span>
+            </figcaption>
+          </figure>
+          <figure class="border border-line">
+            <img
+              src="/mockups/04-namecard-chopsticks.png"
+              alt="Letterpress business card with chopstick sleeve"
+              class="w-full aspect-square object-cover"
+            />
+            <figcaption class="p-4 flex justify-between items-baseline">
+              <span class="font-display text-lg">04 · 名片·筷套</span>
+              <span class="eyebrow">card &amp; chopsticks</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="border-t border-line mt-20 pt-8 flex justify-between text-xs text-muted">
+        <span>巷口 Alley · Logo Showcase</span>
+        <span>Generated following <a class="underline" href="https://github.com/op7418/logo-generator-skill">logo-generator-skill</a></span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+User-Agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /success
+Disallow: /orders/
+Disallow: /api/
+Disallow: /_ipx/
+
+Sitemap: https://your-domain.example/sitemap.xml

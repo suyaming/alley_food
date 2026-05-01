@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #faf9f6;
+    --fg: #0f0f0f;
+    --muted: #6b6b6b;
+    --subtle: #f1efe9;
+    --border: #e8e5de;
+    --accent: #d13b27;
+    --accent-fg: #faf9f6;
+    --accent-soft: #ffe45e;
+    --invert: #0f0f0f;
+    --invert-fg: #faf9f6;
+  }
+
+  .dark {
+    --bg: #0f0f0f;
+    --fg: #faf9f6;
+    --muted: #9a9a9a;
+    --subtle: #1a1a1a;
+    --border: #2a2a2a;
+    --accent: #e34835;
+    --accent-fg: #faf9f6;
+    --accent-soft: #ffe45e;
+    --invert: #faf9f6;
+    --invert-fg: #0f0f0f;
+  }
+
+  html {
+    @apply bg-bg text-fg antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-fg);
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, color, border-color, opacity,
+      transform, filter, box-shadow;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  button,
+  a,
+  [role='button'] {
+    cursor: pointer;
+  }
+
+  /* Page transition — driven by <NuxtPage :transition="{ name: 'page', ... }">. */
+  .page-enter-active,
+  .page-leave-active {
+    transition:
+      opacity 280ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .page-enter-from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .page-leave-to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  /* Reveal-on-scroll baseline. Elements wear data-reveal="" while waiting
+     for IntersectionObserver, then data-reveal="in" once visible. */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  [data-reveal='in'] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0ms !important;
+      animation-duration: 0ms !important;
+      animation-iteration-count: 1 !important;
+    }
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Fraunces', ui-serif, Georgia, serif;
+    font-feature-settings: 'ss01', 'ss02';
+  }
+
+  .font-cn {
+    font-family: 'Noto Serif SC', 'Songti SC', 'STSong', ui-serif, serif;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-widest text-muted;
+  }
+
+  .divider {
+    @apply h-px w-full bg-line;
+  }
+
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-10;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 h-11 text-sm font-medium rounded-none border border-transparent disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  }
+
+  .btn-primary {
+    @apply btn bg-invert text-invert-fg hover:opacity-90;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent text-accent-fg hover:translate-y-[-1px];
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent text-fg border-fg hover:bg-fg hover:text-bg;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-fg hover:bg-subtle border-transparent;
+  }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center h-10 w-10 text-fg hover:bg-subtle relative;
+  }
+
+  .stepper {
+    @apply inline-flex items-center border border-line;
+  }
+  .stepper button {
+    @apply h-9 w-9 inline-flex items-center justify-center text-fg hover:bg-subtle;
+  }
+  .stepper span {
+    @apply px-3 min-w-[2.5rem] text-center font-medium tabular-nums;
+  }
+
+  .input {
+    @apply w-full h-11 px-3 bg-transparent border border-line text-fg placeholder:text-muted focus:border-fg outline-none;
+  }
+
+  .small-caps {
+    @apply text-[11px] font-medium uppercase tracking-widest;
+  }
+
+  .price {
+    @apply font-display font-medium tabular-nums;
+  }
+}
+
+@layer utilities {
+  .grayscale-card {
+    filter: grayscale(0.35) contrast(1.02);
+  }
+  .group:hover .grayscale-card {
+    filter: grayscale(0) contrast(1);
+  }
+
+  /* Sliding underline that grows from left on hover; for nav links. */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: auto;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover::after,
+  .link-underline.router-link-active::after,
+  .link-underline.router-link-exact-active::after {
+    transform: scaleX(1);
+  }
+
+  /* Caption that rises into view on parent hover (used on ProductCard image). */
+  .caption-rise {
+    transform: translateY(4px);
+    opacity: 0;
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group:hover .caption-rise {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Hairline shimmer used as a subtle focus marker on hero CTA arrow. */
+  .shimmer-hairline {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-hairline::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(255 255 255 / 0.18) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+  .group:hover .shimmer-hairline::after {
+    animation: shimmer 1.4s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+}

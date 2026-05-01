@@ -1,0 +1,12 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Xiangkou  single character">
+  <title>v4 Single Character</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&amp;display=swap');
+      .cn { font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif; font-weight: 700; }
+    </style>
+  </defs>
+  <text x="440" y="700" text-anchor="middle"
+        class="cn" font-size="600" fill="#0F0F0F">ã</text>
+  <circle cx="720" cy="320" r="48" fill="#D13B27" />
+</svg>

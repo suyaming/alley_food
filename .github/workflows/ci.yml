@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: lint · typecheck · test · build
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare Nuxt types
+        run: npx nuxt prepare
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Build production bundle
+        run: npm run build
+        env:
+          # Build needs *some* placeholder env values for runtimeConfig defaults.
+          NUXT_PAYPAL_CLIENT_ID: ci-placeholder
+          NUXT_PAYPAL_CLIENT_SECRET: ci-placeholder
+          NUXT_ADMIN_PASSWORD: ci-placeholder
+          NUXT_ADMIN_SESSION_SECRET: ci-placeholder-session-secret-32chars
+          NUXT_PUBLIC_PAYPAL_CLIENT_ID: ci-placeholder
+          NUXT_PUBLIC_SITE_URL: https://shop.example.com
+
+      - name: Verify .output exists
+        run: |
+          test -d .output/server
+          test -f .output/server/index.mjs

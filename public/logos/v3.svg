@@ -1,0 +1,8 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Xiangkou  alley with lantern">
+  <title>v3 Alley with Lantern</title>
+  <line x1="384" y1="880" x2="496" y2="500"
+        stroke="#0F0F0F" stroke-width="28" stroke-linecap="round" />
+  <line x1="640" y1="880" x2="528" y2="500"
+        stroke="#0F0F0F" stroke-width="28" stroke-linecap="round" />
+  <circle cx="512" cy="340" r="56" fill="#D13B27" />
+</svg>

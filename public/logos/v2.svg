@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Xiangkou  vermilion stamp">
+  <title>v2 Vermilion Stamp</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@700&amp;display=swap');
+      .cn { font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif; font-weight: 700; }
+    </style>
+    <clipPath id="stamp-notch">
+      <path d="M 200 200 H 824 V 760 L 760 824 H 200 Z" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#stamp-notch)">
+    <rect x="200" y="200" width="624" height="624" rx="20" fill="#D13B27" />
+  </g>
+  <text x="380" y="640" text-anchor="middle"
+        class="cn" font-size="320" fill="#FAF9F6">÷</text>
+  <text x="644" y="640" text-anchor="middle"
+        class="cn" font-size="320" fill="#FAF9F6">ã</text>
+</svg>

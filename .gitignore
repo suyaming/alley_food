@@ -1,0 +1,43 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files (allow only the *.example templates)
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# Database (SQLite + WAL/SHM sidecars)
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Test artifacts
+test-results/
+playwright-report/
+coverage/
+*.tsbuildinfo
+
+# OS / editor noise
+Thumbs.db
+.vscode/
+!.vscode/settings.example.json

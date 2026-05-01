@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Xiangkou  magazine typography">
+  <title>v5 Magazine Typography</title>
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,400&amp;family=Inter:wght@500&amp;family=Noto+Serif+SC:wght@700&amp;display=swap');
+      .cn { font-family: 'Noto Serif SC', 'Songti SC', serif; font-weight: 700; }
+      .eyebrow { font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.32em; }
+      .meta { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+    </style>
+  </defs>
+  <text x="512" y="240" text-anchor="middle"
+        class="eyebrow" font-size="40" fill="#0F0F0F">STREET FOOD COLLECTIVE</text>
+  <text x="512" y="640" text-anchor="middle"
+        class="cn" font-size="400" fill="#0F0F0F">÷ã</text>
+  <line x1="380" y1="760" x2="644" y2="760"
+        stroke="#0F0F0F" stroke-width="3" />
+  <text x="512" y="822" text-anchor="middle"
+        class="meta" font-size="48" fill="#0F0F0F">Alley · est. 2026</text>
+</svg>

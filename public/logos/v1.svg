@@ -1,0 +1,7 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Xiangkou  door arch">
+  <title>v1 Door Arch</title>
+  <path d="M 280 880 L 280 432 A 232 232 0 0 1 744 432 L 744 880"
+        fill="none" stroke="#0F0F0F" stroke-width="28" stroke-linecap="square" stroke-linejoin="miter" />
+  <line x1="232" y1="880" x2="792" y2="880"
+        stroke="#0F0F0F" stroke-width="28" stroke-linecap="square" />
+</svg>

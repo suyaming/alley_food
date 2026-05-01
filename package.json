@@ -1,0 +1,41 @@
+{
+  "name": "paypal_shop",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "gen:images": "node scripts/gen-product-images.mjs",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@nuxt/image": "^2.0.0",
+    "@nuxtjs/sitemap": "^8.0.15",
+    "@sentry/nuxt": "^10.51.0",
+    "better-sqlite3": "^12.9.0",
+    "drizzle-orm": "^0.45.2",
+    "fuse.js": "^7.3.0",
+    "lucide-vue-next": "^1.0.0",
+    "nuxt": "^4.4.4",
+    "nuxt-security": "^2.5.1",
+    "vue": "^3.5.33",
+    "vue-router": "^5.0.6"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^4.0.3",
+    "@nuxtjs/color-mode": "^4.0.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "@playwright/test": "^1.59.1",
+    "happy-dom": "^20.9.0",
+    "vitest": "^4.1.5"
+  }
+}

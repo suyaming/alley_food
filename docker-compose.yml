@@ -1,0 +1,84 @@
+services:
+  app:
+    build: .
+    image: alley-shop:latest
+    container_name: alley-shop-app
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    expose:
+      - "3000"
+    volumes:
+      - ./data:/app/data
+    networks:
+      - alley
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: alley-shop-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - alley
+    depends_on:
+      - app
+      - umami
+    environment:
+      DOMAIN: ${DOMAIN:-shop.example.com}
+
+  umami:
+    image: ghcr.io/umami-software/umami:postgresql-latest
+    container_name: alley-shop-umami
+    restart: unless-stopped
+    expose:
+      - "3000"
+    environment:
+      DATABASE_URL: postgresql://umami:${UMAMI_DB_PASSWORD:-umami}@umami-db:5432/umami
+      DATABASE_TYPE: postgresql
+      APP_SECRET: ${UMAMI_APP_SECRET:-change-me-to-a-long-random-string}
+      BASE_PATH: /umami
+    depends_on:
+      umami-db:
+        condition: service_healthy
+    networks:
+      - alley
+
+  umami-db:
+    image: postgres:16-alpine
+    container_name: alley-shop-umami-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: ${UMAMI_DB_PASSWORD:-umami}
+    volumes:
+      - umami_db:/var/lib/postgresql/data
+    networks:
+      - alley
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "umami"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  alley:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:
+  umami_db:
