@@ -197,8 +197,13 @@ export default defineNuxtConfig({
         },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'alternate icon', href: '/favicon.ico' },
+        // Canonical favicon pattern (Jake Archibald, 2021):
+        // - .ico carries an explicit `sizes` so old browsers pick it
+        // - .svg has no `sizes` (= "any size") so SVG-capable browsers
+        //   prefer it. The ?v=2 cache-buster forces a refetch after the
+        //   previous (Hebrew-glyph) version was cached.
+        { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg?v=2' },
       ],
     },
   },

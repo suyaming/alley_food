@@ -15,10 +15,18 @@
         reverse_proxy app:3000
     }
 
-    # Static product / brand assets — long cache
-    @assets path /products/* /mockups/* /logos/* /og/* /favicon.* /_nuxt/*
+    # Static product / brand assets — long cache (these are content-stable)
+    @assets path /products/* /mockups/* /logos/* /og/* /_nuxt/*
     handle @assets {
         header Cache-Control "public, max-age=31536000, immutable"
+        reverse_proxy app:3000
+    }
+
+    # Favicons — moderate cache. Filenames don't have content hashes so an
+    # immutable header would lock browsers onto stale icons for a year.
+    @favicons path /favicon.* /apple-touch-icon*
+    handle @favicons {
+        header Cache-Control "public, max-age=86400, must-revalidate"
         reverse_proxy app:3000
     }
 
