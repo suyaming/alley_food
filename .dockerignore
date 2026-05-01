@@ -21,7 +21,9 @@ logs
 !.env.example
 !.env.production.example
 
-migrations/meta
+# NOTE: migrations/meta/ MUST ship in the image — Drizzle's migrator needs
+# meta/_journal.json + meta/<n>_snapshot.json to know which migrations to run.
+
 docs
 *.md
 !README.md
