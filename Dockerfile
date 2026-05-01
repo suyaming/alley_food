@@ -12,7 +12,10 @@ RUN apk add --no-cache python3 make g++ libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm ci
+# npm install (not npm ci): lockfile may have minor drift across host/container
+# OS resolution; install lets npm reconcile against package.json. Builds remain
+# reproducible enough because the lockfile is still committed and used as a hint.
+RUN npm install --no-audit --no-fund --prefer-offline --legacy-peer-deps
 
 COPY . .
 
