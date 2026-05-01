@@ -2,6 +2,7 @@
 import { Plus, Minus, X, ArrowRight } from 'lucide-vue-next'
 
 const { lines, totalAmount, totalQty, updateQty, remove, clear } = useCart()
+const isSandbox = useRuntimeConfig().public.paypalEnv !== 'live'
 
 useHead({ title: '购物袋 Cart · 巷口 Alley' })
 </script>
@@ -144,7 +145,12 @@ useHead({ title: '购物袋 Cart · 巷口 Alley' })
             <ArrowRight :size="14" :stroke-width="1.75" />
           </NuxtLink>
           <p class="text-[11px] text-muted leading-relaxed">
-            Secure online checkout. Demo store — sandbox payments only.
+            <span v-if="isSandbox">
+              Secure online checkout. Demo store — sandbox payments only.
+            </span>
+            <span v-else>
+              Secure online checkout. Encrypted at the payment processor.
+            </span>
           </p>
         </div>
       </aside>

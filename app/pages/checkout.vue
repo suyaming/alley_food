@@ -5,6 +5,7 @@ import { ArrowLeft, ShieldCheck } from 'lucide-vue-next'
 const router = useRouter()
 const { lines, items, totalAmount, totalQty, clear } = useCart()
 const { track } = useTrack()
+const isSandbox = useRuntimeConfig().public.paypalEnv !== 'live'
 
 useHead({ title: '结账 Checkout · 巷口 Alley' })
 
@@ -112,9 +113,12 @@ function onError(message: string) {
 
         <div class="mt-6 flex items-start gap-3 text-xs text-muted leading-relaxed">
           <ShieldCheck :size="14" :stroke-width="1.5" class="shrink-0 mt-0.5" />
-          <p>
+          <p v-if="isSandbox">
             Secure online checkout. This is a sandbox demo — no real money
             will be charged.
+          </p>
+          <p v-else>
+            Secure online checkout. Encrypted at the payment processor.
           </p>
         </div>
       </aside>

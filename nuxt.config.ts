@@ -218,6 +218,7 @@ export default defineNuxtConfig({
     public: {
       paypalClientId: '',
       paypalCurrency: 'USD',
+      paypalEnv: 'sandbox',
       siteUrl: 'http://localhost:3000',
       umamiHost: '',       // e.g. https://shop.example.com/umami
       umamiWebsiteId: '',  // UUID from Umami admin panel
